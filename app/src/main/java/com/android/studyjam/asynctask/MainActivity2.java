@@ -72,14 +72,15 @@ public class MainActivity2 extends AppCompatActivity {
         @Override
         protected RequestResult doInBackground(String... params) {
 
-            InputStream inputStream = Utils.getRequest(params[0]);
+            String x = Utils.getRequestOkHttp(params[0]);
+            //InputStream inputStream = Utils.getRequest(params[0]);
 
-            Reader reader = new InputStreamReader(inputStream);
+            //Reader reader = new InputStreamReader(inputStream);
 
             GsonBuilder gsonBuilder = new GsonBuilder();
             Gson gson = gsonBuilder.create();
 
-            RequestResult requestResult = gson.fromJson(reader, RequestResult.class);
+            RequestResult requestResult = gson.fromJson(x, RequestResult.class);
 
             return requestResult;
         }

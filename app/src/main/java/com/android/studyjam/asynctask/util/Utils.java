@@ -39,6 +39,7 @@ public class Utils {
 
             HttpsURLConnection urlConnection = (HttpsURLConnection) url.openConnection();
             urlConnection.setRequestMethod("GET");
+            urlConnection.setRequestProperty("Content-Type", "application/json");
             urlConnection.setRequestProperty("X-Parse-Application-Id", PARSE_APP_ID);
             urlConnection.setRequestProperty("X-Parse-REST-API-Key", PARSE_REST_API_KEY);
 
@@ -70,6 +71,7 @@ public class Utils {
 
         Request request = new Request.Builder()
             .url(httpUrl)
+            .addHeader("Content-Type", "application/json")
             .addHeader("X-Parse-Application-Id", PARSE_APP_ID)
             .addHeader("X-Parse-REST-API-Key", PARSE_REST_API_KEY)
             .build();

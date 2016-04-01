@@ -1,8 +1,12 @@
 package com.android.studyjam.asynctask.model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class CartoonCharacter {
 
     public String objectId;
+
+    @SerializedName("name")
     public String name;
     public CharacterImage image;
 
